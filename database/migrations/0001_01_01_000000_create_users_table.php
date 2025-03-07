@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('email');
+            $table->string('twitch_id');
+            $table->string('twitch_access_token');
+            $table->string('twitch_refresh_token');
+            $table->integer('twitch_expires_in');
+            $table->string('twitch_avatar_url');
             $table->timestamps();
         });
 
